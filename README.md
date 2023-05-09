@@ -1,38 +1,21 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Code Explanation
 
-## Getting Started
+### `src/pages/posts/namecheap.js`
 
-First, run the development server:
+- We import the `useState` hook from React to manage the state of the email input field.
+- The `validateForm` function is called when the form is submitted. It validates the email address using a regular expression and calls the `sendData` function if the email is valid.
+- The `sendData` function sends a POST request to the `/api/submit_email` API route with the email address as the request body. If the response is successful, it alerts the user and redirects them to the affiliate link. If there is an error, it alerts the user to try again.
+- In the `return` statement, we render the form with the email input field and submit button. We also add a `style` attribute to the email input field to fix the issue with white text being invisible (`style={{ color: 'black' }}`). Additionally, we set the background color of the container to `#f0f4f6` to match the original design.
+- The `onChange` event handler updates the state of the email input field as the user types.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+### `src/pages/api/submit-email.js`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- We import the `MongoClient` and `ServerApiVersion` from the `mongodb` package.
+- We define the MongoDB URI and database name (`uri` and `dbName`).
+- We create a `MongoClient` instance with the MongoDB URI and specify the server API version.
+- We define an asynchronous function that handles the incoming request and response. This function is the default export of the module.
+- We check if the request method is POST. If it is, we proceed to connect to the MongoDB database, insert the email address into the `namecheap` collection, and close the connection. We then send a successful response to the client.
+- If there is an error during the process, we log the error and send an error response to the client.
+- If the request method is not POST, we send a "Method Not Allowed" response.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Note: Make sure to replace `'YOUR_MONGODB_URI'` with your actual MongoDB URI. Additionally, you may need to install the `mongodb` package using `npm install mongodb` in your Next.js project.
