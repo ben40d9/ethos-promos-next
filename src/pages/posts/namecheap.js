@@ -15,7 +15,7 @@ const NameCheap = () => {
   };
 
   const sendData = async (email) => {
-    const response = await fetch("/api/submit_email", {
+    const response = await fetch(`/api/submit_email/namecheap`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
