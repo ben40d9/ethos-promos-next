@@ -1,25 +1,9 @@
-// export default function NordVpn() {
-//   return <h1>First Post</h1>;
-// }
-
-// import Link from "next/link";
-
-// export default function NordVpn() {
-//   return (
-//     <>
-//       <h1>NordVPN</h1>
-//       <div></div>
-//       <h2>
-//         <Link href="/">Back to home</Link>
-//       </h2>
-//     </>
-//   );
-// }
+// https://gizmogo.pxf.io/ethosPromos
 
 import { useState } from "react";
 import styles from "./NameCheap.module.css";
 
-const NordVPN = () => {
+const Gizmogo = () => {
   const [email, setEmail] = useState("");
 
   const validateForm = async (event) => {
@@ -33,7 +17,7 @@ const NordVPN = () => {
   };
 
   const sendData = async (email) => {
-    const response = await fetch(`/api/submit_email/nordvpn`, {
+    const response = await fetch(`/api/submit_email/gizmongo`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -44,7 +28,7 @@ const NordVPN = () => {
       //for now it has an alert pop-up but I want to change this so that the user does not have to click okay to get to the affiliate link
       alert("Thank you! Your email has been submitted.");
       // Redirect to the affiliate link after submission
-      window.location.href = "https://nordvpn.sjv.io/ethosPromos";
+      window.location.href = "https://gizmogo.pxf.io/ethosPromos";
     } else {
       alert("Something went wrong. Please try again.");
     }
@@ -86,4 +70,4 @@ const NordVPN = () => {
   );
 };
 
-export default NordVPN;
+export default Gizmogo;
