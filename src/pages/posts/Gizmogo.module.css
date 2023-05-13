@@ -12,32 +12,32 @@
 .logoLink {
     display: inline-block;
     margin-bottom: 1rem;
-  }
-  
-  .logo {
+}
+
+.logo {
     width: 468px;
     height: 60px;
-  }
-  
-  .heading {
+}
+
+.heading {
     color: #008fd6;
     margin-bottom: 0.5rem;
     font-size: 1.5rem;
-  }
-  
-  .subheading {
+}
+
+.subheading {
     color: #666;
     margin-bottom: 1.5rem;
     font-size: 1rem;
-  }
-  
-  .form {
+}
+
+.form {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  
-  .emailInput {
+}
+
+.emailInput {
     font-size: 1em;
     padding: 0.5em;
     width: 100%;
@@ -47,9 +47,9 @@
     outline: none;
     box-sizing: border-box;
     color: black;
-  }
-  
-  .submitButton {
+}
+
+.submitButton {
     font-size: 1em;
     padding: 0.5em 2em;
     background-color: #008fd6;
@@ -58,9 +58,8 @@
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
-  }
-  
-  .submitButton:hover {
+}
+
+.submitButton:hover {
     background-color: #0079b9;
-  }
-  
+}
