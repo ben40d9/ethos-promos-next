@@ -1,0 +1,5 @@
+<img
+  className={styles.logo}
+  src="/nordvpn-logo.svg"
+  alt="NordVPN"
+/>
