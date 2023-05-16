@@ -1,7 +1,5 @@
-// // https://gizmogo.pxf.io/ethosPromos
-
 // import { useState } from "react";
-// import styles from "./NameCheap.module.css";
+// import styles from "./Gizmogo.module.css";
 
 // const Gizmogo = () => {
 //   const [email, setEmail] = useState("");
@@ -17,7 +15,7 @@
 //   };
 
 //   const sendData = async (email) => {
-//     const response = await fetch(`/api/submit_email/gizmongo`, {
+//     const response = await fetch(`/api/submit_email/gizmogo`, {
 //       method: "POST",
 //       headers: {
 //         "Content-Type": "application/json",
@@ -25,9 +23,7 @@
 //       body: JSON.stringify({ email }),
 //     });
 //     if (response.ok) {
-//       //for now it has an alert pop-up but I want to change this so that the user does not have to click okay to get to the affiliate link
 //       alert("Thank you! Your email has been submitted.");
-//       // Redirect to the affiliate link after submission
 //       window.location.href = "https://gizmogo.pxf.io/ethosPromos";
 //     } else {
 //       alert("Something went wrong. Please try again.");
@@ -36,22 +32,25 @@
 
 //   return (
 //     <div className={styles.container}>
+//       <img
+//         className={styles.backgroundImage}
+//         src="../../images/bkroundimg.jpeg"
+//         alt="Background Image"
+//       />
 //       <a
-//         href="https://namecheap.pxf.io/c/4197431/408988/5618"
+//         href="https://gizmogo.pxf.io/c/4197431/1604433/17499"
 //         target="_top"
-//         id="408988"
+//         id="1604433"
 //         className={styles.logoLink}
 //       >
 //         <img
 //           className={styles.logo}
-//           src="//a.impactradius-go.com/display-ad/5618-408988"
-//           alt="Namecheap"
+//           src="../../images/gizmogoLogo.webp"
+//           alt="Gizmogo Logo"
 //         />
 //       </a>
-//       <h1 className={styles.heading}>Get NameCheap Now!</h1>
-//       <p className={styles.subheading}>
-//         Don't miss out on our limited-time offer.
-//       </p>
+//       <h1 className={styles.heading}>Get Gizmogo Now!</h1>
+//       <p className={styles.subheading}>Get an extra $10 on your next device!</p>
 //       <form onSubmit={validateForm} className={styles.form}>
 //         <input
 //           type="email"
@@ -71,11 +70,13 @@
 // };
 
 // export default Gizmogo;
+
 import { useState } from "react";
 import styles from "./Gizmogo.module.css";
 
 const Gizmogo = () => {
   const [email, setEmail] = useState("");
+  const [submitted, setSubmitted] = useState(false);
 
   const validateForm = async (event) => {
     event.preventDefault();
@@ -96,15 +97,23 @@ const Gizmogo = () => {
       body: JSON.stringify({ email }),
     });
     if (response.ok) {
-      alert("Thank you! Your email has been submitted.");
-      window.location.href = "https://gizmogo.pxf.io/ethosPromos";
+      setSubmitted(true);
     } else {
       alert("Something went wrong. Please try again.");
     }
   };
 
+  if (submitted) {
+    window.location.href = "https://gizmogo.pxf.io/ethosPromos";
+  }
+
   return (
     <div className={styles.container}>
+      <img
+        className={styles.backgroundImage}
+        src="../../images/bkroundimg.jpeg"
+        alt="Background Image"
+      />
       <a
         href="https://gizmogo.pxf.io/c/4197431/1604433/17499"
         target="_top"
@@ -113,23 +122,12 @@ const Gizmogo = () => {
       >
         <img
           className={styles.logo}
-          src="//a.impactradius-go.com/display-ad/17499-1604433"
-          alt=""
-          width="468"
-          height="60"
+          src="../../images/gizmogoLogo.webp"
+          alt="Gizmogo Logo"
         />
       </a>
-      <img
-        height="0"
-        width="0"
-        src="https://imp.pxf.io/i/4197431/1604433/17499"
-        style={{ position: "absolute", visibility: "hidden" }}
-        border="0"
-      />
       <h1 className={styles.heading}>Get Gizmogo Now!</h1>
-      <p className={styles.subheading}>
-        Don't miss out on our limited-time offer.
-      </p>
+      <p className={styles.subheading}>Get an extra $10 on your next device!</p>
       <form onSubmit={validateForm} className={styles.form}>
         <input
           type="email"
