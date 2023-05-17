@@ -1,10 +1,9 @@
 import { MongoClient, ServerApiVersion } from "mongodb";
 
-const uri =
-  "mongodb+srv://databaseCred:OiyLEH13saTRKkup@emailcapture.kwgdj1x.mongodb.net/?retryWrites=true&w=majority";
+//will hide the dbName but does not matter atm
 const dbName = "emails";
 
-const client = new MongoClient(uri, {
+const client = new MongoClient(process.env.MONGO_URI, {
   serverApi: {
     version: ServerApiVersion.v1,
     strict: true,
