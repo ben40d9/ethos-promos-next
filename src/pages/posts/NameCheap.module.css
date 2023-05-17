@@ -77,7 +77,7 @@
   position: relative;
 } */
 
-.formContainer {
+/* .formContainer {
   background-color: white;
   padding: 20px;
   border-radius: 4px;
@@ -101,21 +101,36 @@
   border-radius: 4px;
   position: relative;
   color: white; /* Change the text color to white for better visibility on the dark background */
-}
+/* } */ 
 
-
-.backgroundImage {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  opacity: 0.5;
-  background-image: url('../../../public/images/namecheapBackroundImage.png');
+.body {
+  background-image: url('../../../public/images/namecheapBackroundImage.png') no-repeat center center fixed; 
+  background-color: transparent;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
-  background-position: center;
+  padding: 2rem;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.container {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f4f6;
+  text-align: center;
+  padding: 2rem;
+  max-width: 480px;
+  margin: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 
 .logoLink {
   display: inline-block;
@@ -145,11 +160,6 @@
   font-size: 1rem;
 }
 
-.form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
 .emailInput {
   font-size: 1em;

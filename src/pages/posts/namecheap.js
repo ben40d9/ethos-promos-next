@@ -31,38 +31,40 @@ const NameCheap = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <a
-        href="https://namecheap.pxf.io/c/4197431/408988/5618"
-        target="_top"
-        id="408988"
-        className={styles.logoLink}
-      >
-        <img
-          className={styles.logo}
-          src="//a.impactradius-go.com/display-ad/5618-408988"
-          alt="Namecheap"
-        />
-      </a>
-      <div className={styles.formContainer}>
-        <h1 className={styles.heading}>Get NameCheap Now!</h1>
-        <p className={styles.subheading}>
-          Don't miss out on our limited-time offer.
-        </p>
-        <form onSubmit={validateForm} className={styles.form}>
-          <input
-            type="email"
-            name="email"
-            placeholder="Enter your email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            className={styles.emailInput}
+    <div className={styles.body}>
+      <div className={styles.container}>
+        <a
+          href="https://namecheap.pxf.io/c/4197431/408988/5618"
+          target="_top"
+          id="408988"
+          className={styles.logoLink}
+        >
+          <img
+            className={styles.logo}
+            src="//a.impactradius-go.com/display-ad/5618-408988"
+            alt="Namecheap"
           />
-          <button type="submit" className={styles.submitButton}>
-            Claim Offer
-          </button>
-        </form>
+        </a>
+        <div className={styles.formContainer}>
+          <h1 className={styles.heading}>Get NameCheap Now!</h1>
+          <p className={styles.subheading}>
+            Don't miss out on our limited-time offer.
+          </p>
+          <form onSubmit={validateForm} className={styles.form}>
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              className={styles.emailInput}
+            />
+            <button type="submit" className={styles.submitButton}>
+              Claim Offer
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );
