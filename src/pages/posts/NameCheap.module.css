@@ -1,4 +1,4 @@
-.container {
+/* .container {
     font-family: 'Roboto', sans-serif;
     background-color: #f0f4f6;
     text-align: center;
@@ -53,6 +53,129 @@
 .submitButton {
   font-size: 1em;
   padding: 0.5em 2em;
+  background-color: #008fd6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submitButton:hover {
+  background-color: #0079b9;
+} */
+
+/* .container {
+  font-family: 'Roboto', sans-serif;
+  background-color: #fff;
+  text-align: center;
+  padding: 2rem;
+  max-width: 480px;
+  margin: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  position: relative;
+} */
+
+/* .formContainer {
+  background-color: white;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.container {
+  font-family: 'Roboto', sans-serif;
+  background: url('/images/namecheapBackroundImage.png') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 2rem;
+  max-width: 480px;
+  margin: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  position: relative;
+  color: white; /* Change the text color to white for better visibility on the dark background */
+/* } */ 
+
+.body {
+  background-image: url('../../../public/images/namecheapBackroundImage.png') no-repeat center center fixed; 
+  background-color: transparent;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding: 2rem;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f4f6;
+  text-align: center;
+  padding: 2rem;
+  max-width: 480px;
+  margin: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.logoLink {
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.logo {
+  width: 182px;
+  height: 103px;
+}
+
+.heading {
+  color: #008fd6;
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+
+.subheading {
+  color: #666;
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.description {
+  color: #666;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+
+.emailInput {
+  font-size: 1em;
+  padding: 1em;
+  width: 100%;
+  border: 2px solid #008fd6;
+  border-radius: 4px;
+  margin-bottom: 1em;
+  outline: none;
+  box-sizing: border-box;
+  color: black;
+}
+
+.submitButton {
+  font-size: 1.2em;
+  padding: 1em 2em;
   background-color: #008fd6;
   color: white;
   border: none;

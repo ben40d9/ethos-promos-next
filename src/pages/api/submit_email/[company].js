@@ -1,20 +1,9 @@
 import { MongoClient, ServerApiVersion } from "mongodb";
 
-// const { MongoClient } = require("mongodb");
-// const { ServerApiVersion } = require("mongodb");
-import dotenv from "dotenv";
-dotenv.config();
-
-// Define the MongoDB URI and database name
-const uri =
-  "mongodb+srv://databaseCred:OiyLEH13saTRKkup@emailcapture.kwgdj1x.mongodb.net/?retryWrites=true&w=majority";
-
-// const uri = process.env.MONGODB_URI;
-
+//will hide the dbName but does not matter atm
 const dbName = "emails";
 
-// Create a MongoClient with a MongoClientOptions object to set the Stable API version
-const client = new MongoClient(uri, {
+const client = new MongoClient(process.env.MONGO_URI, {
   serverApi: {
     version: ServerApiVersion.v1,
     strict: true,
@@ -26,10 +15,11 @@ export default async (req, res) => {
   if (req.method === "POST") {
     try {
       const { email } = req.body;
+      const { company } = req.query; // Get the company name from the route parameters
 
       await client.connect();
       const db = client.db(dbName);
-      const collection = db.collection("namecheap");
+      const collection = db.collection(company); // Use the company name to determine the collection
 
       await collection.insertOne({ email });
 
