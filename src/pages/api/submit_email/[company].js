@@ -1,5 +1,6 @@
 import { MongoClient, ServerApiVersion } from "mongodb";
 import sendEmail from "../../../utils/mailchimp";
+import "dotenv/config";
 
 //will hide the dbName but does not matter atm
 const dbName = "emails";
