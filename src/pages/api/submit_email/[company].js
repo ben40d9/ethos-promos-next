@@ -1,4 +1,5 @@
 import { MongoClient, ServerApiVersion } from "mongodb";
+import sendEmail from "../../../utils/mailchimp";
 
 //will hide the dbName but does not matter atm
 const dbName = "emails";
@@ -23,11 +24,15 @@ export default async (req, res) => {
 
       await collection.insertOne({ email });
 
-      client.close();
+      //send email
+      await sendEmail(email, company);
+
       res.status(200).send("Email submitted successfully");
     } catch (err) {
       console.error(err);
       res.status(500).send("Something went wrong");
+    } finally {
+      await client.close();
     }
   } else {
     res.status(405).send("Method Not Allowed");
