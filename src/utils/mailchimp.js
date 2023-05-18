@@ -43,7 +43,7 @@
 // module.exports = sendEmail;
 
 const mailchimpTransactional = require("@mailchimp/mailchimp_transactional")(
-  "md-zq0s64qrJFvJlW4JqPn2jg"
+  `${process.env.MAILCHIMP_API_KEY}`
 );
 const generateContent = require("./generateContent.js");
 
