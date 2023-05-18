@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@mailchimp/mailchimp_marketing": "^3.0.80",
+    "@mailchimp/mailchimp_transactional": "^1.0.50",
     "autoprefixer": "10.4.14",
     "dotenv": "^16.0.3",
     "eslint": "8.39.0",
