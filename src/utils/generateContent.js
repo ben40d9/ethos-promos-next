@@ -64,7 +64,7 @@ import "dotenv/config";
 //         method: "POST",
 //         headers: {
 //           "Content-Type": "application/json",
-//           Authorization: `Bearer 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`,
+//           Authorization: `Bearer dumbass`,
 //         },
 //         body: JSON.stringify({
 //           model: "gpt-3.5-turbo",
