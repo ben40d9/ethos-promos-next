@@ -32,19 +32,18 @@ export default async (req, res) => {
       await collection.insertOne({ email });
 
       // const content = await generateContent(company);
-      const content =
-        await `test here I am sending this email, to ${email}, inquiring about ${company} from the server`;
 
+      //msg will be defined here because it is dependent on the company name and user email
       var msg = {
         to: `${email}`, // Change to your recipient
         from: "ben@ethospromos.com", // Change to your verified sender
         subject: "I am Sending with SendGrid",
-        text: `${content}`,
+        text: `test here I am sending this email, to ${email}, inquiring about ${company} from the server`,
         html: "<strong>this is the new test</strong>",
       };
 
       //send email
-      await sendEmail(msg, content);
+      await sendEmail(msg);
 
       res.status(200).send("Email submitted successfully");
     } catch (err) {
