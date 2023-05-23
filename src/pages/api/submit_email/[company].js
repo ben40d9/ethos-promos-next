@@ -33,13 +33,34 @@ export default async (req, res) => {
 
       // const content = await generateContent(company);
 
-      //msg will be defined here because it is dependent on the company name and user email
       var msg = {
         to: `${email}`, // Change to your recipient
         from: "ben@ethospromos.com", // Change to your verified sender
-        subject: "I am Sending with SendGrid",
-        text: `test here I am sending this email, to ${email}, inquiring about ${company} from the server`,
-        html: "<strong>this is the new test</strong>",
+        subject: `Welcome to Ethos Promos - Special Offer from ${company}`,
+        text: `Hello,
+
+Thank you for your interest in ${company}!
+
+We are excited to share a special offer from ${company} with you. Click the link below to explore what ${company} has to offer and take advantage of this exclusive deal.
+
+${"https://golfpartner.sjv.io/ethosPromos"} 
+
+We hope you enjoy this special offer. If you have any questions or need further assistance, please don't hesitate to contact us.
+
+Best,
+The Ethos Promos Team`,
+        html: `<p>Hello,</p>
+
+<p>Thank you for your interest in ${company}!</p>
+
+<p>We are excited to share a special offer from ${company} with you. Click the link below to explore what ${company} has to offer and take advantage of this exclusive deal.</p>
+
+<a href="${"https://golfpartner.sjv.io/ethosPromos"}">Click here for your special offer from ${company}</a>
+
+<p>We hope you enjoy this special offer. If you have any questions or need further assistance, please don't hesitate to contact us.</p>
+
+<p>Best,<br>
+The Ethos Promos Team</p>`,
       };
 
       //send email
