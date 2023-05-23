@@ -1,6 +1,7 @@
-const { Configuration, OpenAIApi } = require("openai");
-const dotenv = require("dotenv");
-dotenv.config();
+// const { Configuration, OpenAIApi } = require("openai");
+import { Configuration, OpenAIApi } from "openai";
+
+import "dotenv/config";
 
 // console.log(process.env);
 // console.log(process.env.OPENAI_API_KEY);
@@ -41,3 +42,58 @@ dotenv.config();
 // generateContent("nordVPN");
 
 // module.exports = generateContent;
+
+// import fetch from "node-fetch";
+// // import companies from "../../companies.json"; // replace with the actual path to your companies.json file
+// const companies = {
+//   namecheap: "https://namecheap.pxf.io/5g53bD",
+
+//   nordvpn: "https://nordvpn.sjv.io/ethosPromos",
+
+//   gizmogo: "https://gizmogo.pxf.io/ethosPromos",
+
+//   golfPartner: "https://golfpartner.sjv.io/ethosPromos",
+// };
+
+// const generateContent = async (company) => {
+//   try {
+//     const affiliateLink = companies[company];
+//     const response = await fetch(
+//       "https://api.openai.com/v1/engines/davinci-codex/chat/completions",
+//       {
+//         method: "POST",
+//         headers: {
+//           "Content-Type": "application/json",
+//           Authorization: `Bearer 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`,
+//         },
+//         body: JSON.stringify({
+//           model: "gpt-3.5-turbo",
+//           messages: [
+//             {
+//               role: "system",
+//               content: "You are a helpful assistant.",
+//             },
+//             {
+//               role: "user",
+//               content: `Write a promotional email for a company called nordVPN. Include this affiliate link in the email: ${affiliateLink}`,
+//             },
+//           ],
+//         }),
+//       }
+//     );
+
+//     const data = await response.json();
+//     console.log(response);
+//     console.log(data);
+
+//     return data.choices[0].message.content;
+//     console.log(data.choices);
+//   } catch (error) {
+//     console.error("Error generating content:", error);
+//     throw error;
+//   }
+// };
+
+// generateContent("nordVPN");
+
+// export default generateContent;
