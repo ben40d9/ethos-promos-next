@@ -1,4 +1,5 @@
-const sgMail = require("@sendgrid/mail");
+// const sgMail = require("@sendgrid/mail");
+import sgMail from "@sendgrid/mail";
 
 // const generateContent = "./generateContent";
 
@@ -26,4 +27,5 @@ const sendEmail = async (msg) => {
   }
 };
 
-module.exports = sendEmail;
+// module.exports = sendEmail;
+export default sendEmail;
