@@ -36,10 +36,12 @@ const NordVPN = () => {
           height="144"
         />
       </a>
-      <h1 className={styles.heading}>Secure Your Internet with NordVPN Now!</h1>
+      <h1 className={styles.heading}>
+        Secure Your Online Privacy with NordVPN
+      </h1>
       <p className={styles.subheading}>
-        Enjoy secure and private access to the internet with the world's most
-        advanced VPN. Don't miss out on our limited-time offer.
+        Get up to 63% off NordVPN + 3 extra months. Secure your online data with
+        a VPN.
       </p>
       <form onSubmit={validateForm} className={styles.form}>
         <input
@@ -52,7 +54,7 @@ const NordVPN = () => {
           className={styles.emailInput}
         />
         <button type="submit" className={styles.submitButton}>
-          Claim Offer
+          Get Our Best Online Protection Tools
         </button>
       </form>
     </div>
