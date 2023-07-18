@@ -1,12 +1,7 @@
 import { MongoClient, ServerApiVersion } from "mongodb";
-
 import sendEmail from "../../../utils/sendEmail";
-
-// import generateContent from "../../../utils/generateContent";
-
 import "dotenv/config";
 
-//will hide the dbName but does not matter atm
 const dbName = "emails";
 
 const client = new MongoClient(process.env.MONGO_URI, {
@@ -17,25 +12,35 @@ const client = new MongoClient(process.env.MONGO_URI, {
   },
 });
 
+// Define a dictionary for affiliate links
+const affiliateLinks = {
+  namecheap: "https://namecheap.pxf.io/5g53bD",
+  nordvpn: "https://nordvpn.sjv.io/ethosPromos",
+  gizmogo: "https://gizmogo.pxf.io/ethosPromos",
+  golfpartner: "https://golfpartner.sjv.io/ethosPromos",
+  // Add more companies and their affiliate links here
+};
+
 export default async (req, res) => {
   if (req.method === "POST") {
     try {
       const { email } = req.body;
-      const { company } = req.query; // Get the company name from the route parameters
+      const { company } = req.query;
 
       await client.connect();
 
       const db = client.db(dbName);
-
-      const collection = db.collection(company); // Use the company name to determine the collection
+      const collection = db.collection(company);
 
       await collection.insertOne({ email });
 
-      // const content = await generateContent(company);
+      //Will change the default affiliate link to the ethospromos link when server is live
+      const affiliateLink =
+        affiliateLinks[company] || "https://default-affiliate-link";
 
       var msg = {
-        to: `${email}`, // Change to your recipient
-        from: "ben@ethospromos.com", // Change to your verified sender
+        to: `${email}`,
+        from: "ben@ethospromos.com",
         subject: `Welcome to Ethos Promos - Special Offer from ${company}`,
         text: `Hello,
 
@@ -43,7 +48,7 @@ Thank you for your interest in ${company}!
 
 We are excited to share a special offer from ${company} with you. Click the link below to explore what ${company} has to offer and take advantage of this exclusive deal.
 
-${"https://golfpartner.sjv.io/ethosPromos"} 
+${affiliateLink} 
 
 We hope you enjoy this special offer. If you have any questions or need further assistance, please don't hesitate to contact us.
 
@@ -55,7 +60,7 @@ The Ethos Promos Team`,
 
 <p>We are excited to share a special offer from ${company} with you. Click the link below to explore what ${company} has to offer and take advantage of this exclusive deal.</p>
 
-<a href="${"https://golfpartner.sjv.io/ethosPromos"}">Click here for your special offer from ${company}</a>
+<a href="${affiliateLink}">Click here for your special offer from ${company}</a>
 
 <p>We hope you enjoy this special offer. If you have any questions or need further assistance, please don't hesitate to contact us.</p>
 
@@ -63,7 +68,6 @@ The Ethos Promos Team`,
 The Ethos Promos Team</p>`,
       };
 
-      //send email
       await sendEmail(msg);
 
       res.status(200).send("Email submitted successfully");
