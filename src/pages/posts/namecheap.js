@@ -33,22 +33,11 @@ const NameCheap = () => {
   return (
     <div className={styles.body}>
       <div className={styles.container}>
-        <a
-          href="https://namecheap.pxf.io/c/4197431/408988/5618"
-          target="_top"
-          id="408988"
-          className={styles.logoLink}
-        >
-          <img
-            className={styles.logo}
-            src="//a.impactradius-go.com/display-ad/5618-408988"
-            alt="Namecheap"
-          />
-        </a>
         <div className={styles.formContainer}>
-          <h1 className={styles.heading}>Get NameCheap Now!</h1>
+          <h1 className={styles.heading}>Unlock Namecheap's Services</h1>
           <p className={styles.subheading}>
-            Don't miss out on our limited-time offer.
+            Experience affordable, reliable, and secure domain registration, web
+            hosting, and more. Start your online journey with us today.
           </p>
           <form onSubmit={validateForm} className={styles.form}>
             <input
@@ -61,13 +50,24 @@ const NameCheap = () => {
               className={styles.emailInput}
             />
             <button type="submit" className={styles.submitButton}>
-              Claim Offer
+              Claim Your Offer
             </button>
           </form>
         </div>
+        <a
+          href="https://namecheap.pxf.io/c/4197431/408988/5618"
+          target="_top"
+          id="408988"
+          className={styles.logoLink}
+        >
+          <img
+            className={styles.logo}
+            src="//a.impactradius-go.com/display-ad/5618-408988"
+            alt="Namecheap"
+          />
+        </a>
       </div>
     </div>
   );
 };
-
 export default NameCheap;
