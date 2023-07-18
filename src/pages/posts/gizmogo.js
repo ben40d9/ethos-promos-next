@@ -38,8 +38,9 @@ const Gizmogo = () => {
     <div className={styles.container}>
       <img
         className={styles.backgroundImage}
-        src="../../images/bkroundimg.jpeg"
-        alt="Background Image"
+        src="../../images/gizmogoBackground.webp"
+        alt="Gizmogo Background Image"
+        style={{ opacity: 0.8 }} // Increase opacity
       />
       <a
         href="https://gizmogo.pxf.io/c/4197431/1604433/17499"
